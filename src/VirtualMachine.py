@@ -181,15 +181,15 @@ def main():
 	for i in range(count):
         files.append(sys.argv[2+i])
     for file in files:
-	    with open(file) as myfile:
-	      contents=myfile.readlines()
+	with open(file) as myfile:
+	       contents=myfile.readlines()
         file=file[:-3]
 	    z=file[::-1]
         i=z.find('/')
         z=z[:i]
         z=z[::-1]
-		x=0
-		for i in range(len(contents)):
+	x=0
+	for i in range(len(contents)):
 		    s="//"
 		    if s in contents[i]:
 		        j=contents[i].find(s)
@@ -198,10 +198,10 @@ def main():
 		        j=contents[i].find('\n')
 		        contents[i]=contents[i][:j]
 		    contents[i]=contents[i].split()
-	    while [] in contents:
-	      contents.remove([])
-		final=[]
-		for i in contents:
+	 while [] in contents:
+	     contents.remove([])
+	 final=[]
+	 for i in contents:
 		    if('push'== i[0]):
 		        final+=pushfunc(i)
 		        continue
